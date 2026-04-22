@@ -1,7 +1,7 @@
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   const { firstName, lastName, email, message } = await req.json();
@@ -11,10 +11,10 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await sgMail.send({
+    await resend.emails.send({
       to: process.env.CONTACT_EMAIL!,
       from: process.env.CONTACT_EMAIL!,
-      replyTo: email,
+      reply_to: email,
       subject: `New contact from ${firstName} ${lastName}`,
       text: `From: ${firstName} ${lastName} <${email}>\n\n${message}`,
       html: `<p><strong>From:</strong> ${firstName} ${lastName} &lt;${email}&gt;</p><p>${message.replace(/\n/g, '<br />')}</p>`,
