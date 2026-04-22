@@ -57,16 +57,16 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
             <p className="text-[1.25rem]">{text}</p>
           </div>
           <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="website"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                style={{ display: 'none' }}
-              />
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ display: "none" }}
+            />
             <div className="grid gap-[1.25rem]">
               <div className="grid gap-[1.25rem] lg:flex lg:gap-[1.25rem]">
                 <TextInput
