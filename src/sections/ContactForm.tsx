@@ -10,15 +10,38 @@ interface ContactFormProps {
   text: string,
 }
 
+type Status = 'idle' | 'submitting' | 'success' | 'error';
+
 export const ContactForm = ({ heading, text }: ContactFormProps) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<Status>('idle');
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ firstName, lastName, message });
-  }
+    setStatus('submitting');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, message }),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setStatus('success');
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setMessage('');
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <section className="py-[2rem] bg-darkGreen text-white lg:py-[9rem]" data-contact-form>
       <Container>
@@ -43,6 +66,13 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
                   placeholder="Last Name"
                 />
               </div>
+              <TextInput
+                theme="dark"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                type="email"
+              />
               <TextArea
                 theme="dark"
                 value={message}
@@ -50,9 +80,15 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
                 placeholder="Message"
               />
             </div>
+            {status === 'success' && (
+              <p className="mt-[1rem] text-brightGreen">Message sent! We&apos;ll be in touch.</p>
+            )}
+            {status === 'error' && (
+              <p className="mt-[1rem] text-red-400">Something went wrong. Please try again.</p>
+            )}
             <div className="mt-[2rem] flex justify-end">
-              <Button onClick={() => {}} type="submit">
-                Send Message
+              <Button onClick={() => {}} type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
               </Button>
             </div>
           </form>

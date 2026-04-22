@@ -23,14 +23,14 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    style: 'secondary',
+    variant: 'secondary',
     children: 'Get in Touch',
   },
 };
 
 export const Tertiary: Story = {
   args: {
-    style: 'tertiary',
+    variant: 'tertiary',
     children: 'Get in Touch',
   },
 };

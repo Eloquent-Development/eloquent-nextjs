@@ -46,7 +46,7 @@ export const IconsWithText = ({ heading, subheading, icons, btnText }: IconsWith
             ))}
           </ul>
           {btnText &&
-            <Button style="secondary" onClick={scrollToContactForm}>
+            <Button variant="secondary" onClick={scrollToContactForm}>
               {btnText}
             </Button>
           }

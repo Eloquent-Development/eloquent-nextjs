@@ -1,23 +1,22 @@
 'use client';
 import React from 'react';
 
-interface ButtonProps {
-  style?: 'primary' | 'secondary' | 'tertiary';
-  children: string,
-  onClick: () => void;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  children: string;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  style = 'primary',
+  variant = 'primary',
   children,
   ...props
 }: ButtonProps) => {
   let colorClasses;
 
-  switch(style) {
+  switch(variant) {
     case 'primary':
       colorClasses = 'bg-brightGreen text-darkGreen';
       break;

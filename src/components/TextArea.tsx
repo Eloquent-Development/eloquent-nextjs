@@ -1,15 +1,11 @@
 import React from "react";
 
-interface TextAreaProps {
-  value?: string;
+interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   theme?: "light" | "dark";
-  onChange: (e: any) => void;
 }
 
 export const TextArea = ({
-  value = "",
   theme = "light",
-  onChange,
   ...props
 }: TextAreaProps) => {
   let colorClasses;
@@ -28,8 +24,6 @@ export const TextArea = ({
     <>
       <textarea
         className={`${colorClasses} h-[15rem] w-full rounded-[.875rem] p-[1.125rem] font-sans text-[1.125rem] font-[500] leading-none shadow-[0_0_0_.0625rem] shadow-whiteTransparent`}
-        value={value}
-        onChange={onChange}
         {...props}
       />
     </>
