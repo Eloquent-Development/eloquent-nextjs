@@ -4,7 +4,11 @@ import { NextRequest, NextResponse } from 'next/server';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
-  const { firstName, lastName, email, message } = await req.json();
+  const { firstName, lastName, email, message, honeypot } = await req.json();
+
+  if (honeypot) {
+    return NextResponse.json({ success: true });
+  }
 
   if (!firstName || !lastName || !email || !message) {
     return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });

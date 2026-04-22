@@ -17,6 +17,7 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,7 +28,7 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, email, message }),
+        body: JSON.stringify({ firstName, lastName, email, message, honeypot }),
       });
 
       if (!res.ok) throw new Error();
@@ -56,6 +57,16 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
             <p className="text-[1.25rem]">{text}</p>
           </div>
           <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ display: 'none' }}
+              />
             <div className="grid gap-[1.25rem]">
               <div className="grid gap-[1.25rem] lg:flex lg:gap-[1.25rem]">
                 <TextInput
