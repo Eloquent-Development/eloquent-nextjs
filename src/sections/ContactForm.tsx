@@ -1,53 +1,58 @@
-'use client';
-import React, { useState } from 'react';
-import { Button } from '../components/Button';
-import { TextInput } from '@/components/TextInput';
-import { TextArea } from '@/components/TextArea';
-import { Container } from '@/components/Container';
+"use client";
+import React, { useState } from "react";
+import { Button } from "../components/Button";
+import { TextInput } from "@/components/TextInput";
+import { TextArea } from "@/components/TextArea";
+import { Container } from "@/components/Container";
 
 interface ContactFormProps {
-  heading: string,
-  text: string,
+  heading: string;
+  text: string;
 }
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Status = "idle" | "submitting" | "success" | "error";
 
 export const ContactForm = ({ heading, text }: ContactFormProps) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<Status>('idle');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('submitting');
+    setStatus("submitting");
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, lastName, email, message }),
       });
 
       if (!res.ok) throw new Error();
 
-      setStatus('success');
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setMessage('');
+      setStatus("success");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
     } catch {
-      setStatus('error');
+      setStatus("error");
     }
   };
 
   return (
-    <section className="py-[2rem] bg-darkGreen text-white lg:py-[9rem]" data-contact-form>
+    <section
+      className="bg-darkGreen py-[2rem] text-white lg:py-[9rem]"
+      data-contact-form
+    >
       <Container>
         <div className="grid gap-[2.375rem] lg:grid-cols-2 lg:gap-0">
           <div className="lg:max-w-[26.25rem]">
-            <h2 className="text-brightGreen text-[2.25rem] mb-[.5rem] lg:text-[2.875rem] font-[300]">{heading}</h2>
+            <h2 className="mb-[.5rem] text-[2.25rem] font-[300] text-brightGreen lg:text-[2.875rem]">
+              {heading}
+            </h2>
             <p className="text-[1.25rem]">{text}</p>
           </div>
           <form onSubmit={handleSubmit}>
@@ -80,15 +85,23 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
                 placeholder="Message"
               />
             </div>
-            {status === 'success' && (
-              <p className="mt-[1rem] text-brightGreen">Message sent! We&apos;ll be in touch.</p>
+            {status === "success" && (
+              <p className="mt-[1rem] text-brightGreen">
+                Message sent! We&apos;ll be in touch.
+              </p>
             )}
-            {status === 'error' && (
-              <p className="mt-[1rem] text-red-400">Something went wrong. Please try again.</p>
+            {status === "error" && (
+              <p className="text-red-400 mt-[1rem]">
+                Something went wrong. Please try again.
+              </p>
             )}
             <div className="mt-[2rem] flex justify-end">
-              <Button onClick={() => {}} type="submit" disabled={status === 'submitting'}>
-                {status === 'submitting' ? 'Sending...' : 'Send Message'}
+              <Button
+                onClick={() => {}}
+                type="submit"
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Sending..." : "Send Message"}
               </Button>
             </div>
           </form>

@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       to: process.env.CONTACT_EMAIL!,
-      from: process.env.CONTACT_EMAIL!,
+      from: process.env.FROM_EMAIL!,
       reply_to: email,
       subject: `New contact from ${firstName} ${lastName}`,
       text: `From: ${firstName} ${lastName} <${email}>\n\n${message}`,
@@ -21,7 +21,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 });
+  } catch (err) {
+    console.error('Resend error:', err);
+    return NextResponse.json({ error: 'Failed to send message.', detail: String(err) }, { status: 500 });
   }
 }
