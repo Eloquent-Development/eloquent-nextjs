@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="relative h-[9rem] bg-brightGreen lg:h-[16rem]">
+    <footer className="relative h-36 bg-brightGreen lg:h-64">
       <Image
         className="absolute bottom-0 right-0 hidden max-h-full lg:inline-block lg:max-w-none"
         src="/logo-footer.svg"
@@ -20,7 +20,7 @@ export const Footer = () => {
         height={360}
         priority
       />
-      <div className="container mx-auto py-[.875rem] text-[.625rem] text-darkGreen">
+      <div className="container mx-auto py-3.5 text-xs text-darkGreen">
         &copy; 2024 Eloquent Development All Rights Reserved.
       </div>
     </footer>

@@ -46,19 +46,19 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
 
   return (
     <section
-      className="bg-darkGreen py-[2rem] text-white lg:py-[9rem]"
+      className="bg-darkGreen py-8 text-white lg:py-36"
       data-contact-form
     >
       <Container>
-        <div className="grid gap-[2.375rem] lg:grid-cols-2 lg:gap-0">
-          <div className="lg:max-w-[26.25rem]">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-0">
+          <div className="lg:max-w-md">
             <FadeUp>
-              <h2 className="mb-[.5rem] text-[2.25rem] font-[300] text-brightGreen lg:text-[2.875rem]">
+              <h2 className="mb-2 text-4xl font-light text-brightGreen lg:text-5xl">
                 {heading}
               </h2>
             </FadeUp>
             <FadeUp delay={100}>
-              <p className="text-[1.25rem]">{text}</p>
+              <p className="text-xl">{text}</p>
             </FadeUp>
           </div>
           <form onSubmit={handleSubmit}>
@@ -72,8 +72,8 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
               aria-hidden="true"
               style={{ display: "none" }}
             />
-            <div className="grid gap-[1.25rem]">
-              <div className="grid gap-[1.25rem] lg:flex lg:gap-[1.25rem]">
+            <div className="grid gap-5">
+              <div className="grid gap-5 lg:flex lg:gap-5">
                 <TextInput
                   theme="dark"
                   value={firstName}
@@ -110,16 +110,16 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
               />
             </div>
             {status === "success" && (
-              <p className="mt-[1rem] text-brightGreen">
+              <p className="mt-4 text-brightGreen">
                 Message sent! We&apos;ll be in touch.
               </p>
             )}
             {status === "error" && (
-              <p className="text-red-400 mt-[1rem]">
+              <p className="text-red-400 mt-4">
                 Something went wrong. Please try again.
               </p>
             )}
-            <div className="mt-[2rem] flex justify-end">
+            <div className="mt-8 flex justify-end">
               <Button
                 onClick={() => {}}
                 type="submit"

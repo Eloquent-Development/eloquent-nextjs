@@ -24,13 +24,13 @@ export const Button = ({
       colorClasses = 'bg-darkGreen text-brightGreen';
       break;
     case 'tertiary':
-      colorClasses = 'bg-white text-darkGreen shadow-[0_0_0_.0625rem] shadow-darkGreen';
+      colorClasses = 'bg-white text-darkGreen shadow-[0_0_0_1px] shadow-darkGreen';
       break;
   }
 
   return (
     <button
-      className={`${colorClasses} h-[2.3125rem] rounded-[3.75rem] px-3 py-2 font-mono text-lg uppercase leading-none lg:leading-none lg:h-[2.875rem] lg:px-3.5 lg:py-2.5 lg:text-xl`}
+      className={`${colorClasses} h-9 rounded-full px-3 py-2 font-mono text-lg uppercase leading-none lg:leading-none lg:h-12 lg:px-3.5 lg:py-2.5 lg:text-xl`}
       {...props}
     >
       {children}

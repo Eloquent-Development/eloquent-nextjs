@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export const Container = ({ children }: ButtonProps) => {
   return (
-    <div className={`container mx-auto max-w-[75rem] px-4`}>
+    <div className={`container mx-auto max-w-6xl px-4`}>
       {children}
     </div>
   );

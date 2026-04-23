@@ -20,35 +20,35 @@ interface IconsWithTextProps {
 
 export const IconsWithText = ({ heading, subheading, icons, btnText }: IconsWithTextProps) => {
   return (
-    <section className="pt-[3.5rem] pb-[3.625rem] lg:pt-[5rem] text-center">
+    <section className="pt-14 pb-14 lg:pt-20 text-center">
       <Container>
         <div>
           {(heading || subheading) &&
-            <div className="mb-[3.5rem] mx-auto max-w-[46.75rem]">
+            <div className="mb-14 mx-auto max-w-3xl">
               {heading &&
                 <FadeUp>
-                  <h2 className="text-darkGreen text-[2.25rem] lg:text-[2.875rem]">{heading}</h2>
+                  <h2 className="text-darkGreen text-4xl lg:text-5xl">{heading}</h2>
                 </FadeUp>
               }
               {subheading &&
                 <FadeUp delay={100}>
-                  <p className="text-[1.25rem] lg:text-[1.625rem]">{subheading}</p>
+                  <p className="text-xl lg:text-2xl">{subheading}</p>
                 </FadeUp>
               }
             </div>
           }
-          <ul className="grid gap-[3.75rem] mb-[3.5rem] lg:grid-cols-3">
+          <ul className="grid gap-16 mb-14 lg:grid-cols-3">
             {icons.map((icon, index) => (
               <li key={index}>
                 <div className="text-center">
-                  <div className="flex justify-center mb-[.5rem]">
+                  <div className="flex justify-center mb-2">
                     {icon.icon}
                   </div>
                   <FadeUp>
-                    <h3 className="text-darkGreen uppercase text-[1.625rem] mb-[0.625rem]">{icon.title}</h3>
+                    <h3 className="text-darkGreen uppercase text-2xl mb-2.5">{icon.title}</h3>
                   </FadeUp>
                   <FadeUp delay={100}>
-                    <p className="max-w-[17.5rem] mx-auto">{icon.text}</p>
+                    <p className="max-w-72 mx-auto">{icon.text}</p>
                   </FadeUp>
                 </div>
               </li>

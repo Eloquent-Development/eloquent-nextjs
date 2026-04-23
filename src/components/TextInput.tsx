@@ -21,7 +21,7 @@ export const TextInput = ({
 
   return (
     <>
-      <input className={`${colorClasses} w-full h-3.75rem p-[1.125rem] shadow-[0_0_0_.0625rem] rounded-[.875rem] shadow-whiteTransparent font-sans font-[500] text-[1.125rem] leading-none`} type="text" {...props} />
+      <input className={`${colorClasses} w-full h-14 p-4 shadow-[0_0_0_1px] rounded-xl shadow-whiteTransparent font-sans font-medium text-lg leading-none`} type="text" {...props} />
     </>
   );
 };

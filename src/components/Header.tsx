@@ -11,7 +11,7 @@ export const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <Link href="/">
           <Image
-            className="w-[9.375rem] lg:w-[16.15rem]"
+            className="w-36 lg:w-64"
             src="/logo.svg"
             alt="Eloquent Development Logo"
             width={252}

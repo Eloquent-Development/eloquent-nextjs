@@ -5,9 +5,9 @@ import { Container } from '@/components/Container';
 
 export const ClientList = () => {
   return (
-    <section className="py-[2.8rem] lg:py-[6.75rem]">
+    <section className="py-11 lg:py-28">
       <Container>
-        <div className="flex flex-wrap justify-around items-center gap-[1.875rem] lg:gap-[3.625rem] max-w-[80rem] mx-auto">
+        <div className="flex flex-wrap justify-around items-center gap-7 lg:gap-14 max-w-7xl mx-auto">
           <Image
             className="h-[40px] lg:h-[65px]"
             alt="Stanley Logo"

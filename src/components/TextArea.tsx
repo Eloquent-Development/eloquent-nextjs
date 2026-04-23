@@ -23,7 +23,7 @@ export const TextArea = ({
   return (
     <>
       <textarea
-        className={`${colorClasses} h-[15rem] w-full rounded-[.875rem] p-[1.125rem] font-sans text-[1.125rem] font-[500] leading-none shadow-[0_0_0_.0625rem] shadow-whiteTransparent`}
+        className={`${colorClasses} h-60 w-full rounded-xl p-4 font-sans text-lg font-medium leading-none shadow-[0_0_0_1px] shadow-whiteTransparent`}
         {...props}
       />
     </>
