@@ -27,7 +27,7 @@ export const IconsWithText = ({ heading, subheading, icons, btnText }: IconsWith
             <div className="mb-14 mx-auto max-w-3xl">
               {heading &&
                 <FadeUp>
-                  <h2 className="text-darkGreen text-4xl lg:text-5xl">{heading}</h2>
+                  <h2 className="text-darkGreen text-4xl lg:text-5xl mb-5">{heading}</h2>
                 </FadeUp>
               }
               {subheading &&

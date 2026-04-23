@@ -17,7 +17,7 @@ export const Hero = ({ heading, text, btnText }: HeroProps) => {
       <Container>
         <div className="lg:max-w-4xl mx-auto px-4 pb-14 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-28 before:h-px before:bg-brightGreen before:-translate-x-1/2">
           <FadeUp>
-            <h1 className="text-brightGreen text-5xl lg:text-6xl leading-tight mb-5">{heading}</h1>
+            <h1 className="text-brightGreen text-4xl lg:text-6xl leading-tight mb-5">{heading}</h1>
           </FadeUp>
           <FadeUp delay={100}>
             <div className="max-w-md mx-auto mb-10">
