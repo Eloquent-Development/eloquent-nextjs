@@ -74,12 +74,16 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="First Name"
+                  required
+                  maxLength={100}
                 />
                 <TextInput
                   theme="dark"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Last Name"
+                  required
+                  maxLength={100}
                 />
               </div>
               <TextInput
@@ -88,12 +92,16 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 type="email"
+                required
+                maxLength={254}
               />
               <TextArea
                 theme="dark"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Message"
+                required
+                maxLength={5000}
               />
             </div>
             {status === "success" && (
