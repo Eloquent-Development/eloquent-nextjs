@@ -109,3 +109,23 @@ h6 {
 .animate-icon-slide-slow {
   animation: icon-slide 9s ease-in-out 1s infinite;
 }
+
+@keyframes icon-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+.animate-icon-breathe {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: icon-breathe 4s ease-in-out infinite;
+}
+.animate-icon-orbit {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: icon-spin 25s linear infinite;
+}
+.animate-icon-orbit-reverse {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: icon-spin-reverse 20s linear infinite;
+}

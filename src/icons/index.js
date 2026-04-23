@@ -3,28 +3,34 @@ import React from 'react';
 export const Experience = () => (
   <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="52" cy="52" r="52" fill="#072932"/>
-    <path d="M84 51.5C84 69.4635 69.659 84 52 84C34.341 84 20 69.4635 20 51.5C20 33.5365 34.341 19 52 19C69.659 19 84 33.5365 84 51.5Z" stroke="#1CFAC5" strokeWidth="2"/>
-    <rect x="44" y="14" width="16" height="16" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
-    <path d="M27.1983 60.6074L35.2191 74.0276L19.1777 74.0275L27.1983 60.6074Z" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
-    <rect x="71" y="59" width="16" height="15" rx="7.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+    <path className="animate-icon-breathe" d="M84 51.5C84 69.4635 69.659 84 52 84C34.341 84 20 69.4635 20 51.5C20 33.5365 34.341 19 52 19C69.659 19 84 33.5365 84 51.5Z" stroke="#1CFAC5" strokeWidth="2"/>
+    <g className="animate-icon-orbit">
+      <rect x="44" y="14" width="16" height="16" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+      <path d="M27.1983 60.6074L35.2191 74.0276L19.1777 74.0275L27.1983 60.6074Z" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+      <rect x="71" y="59" width="16" height="15" rx="7.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+    </g>
   </svg>
 );
 
 export const Integrity = () => (
   <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="52" cy="52" r="52" fill="#072932"/>
-    <path d="M52 82C48.2852 82 44.8427 79.7424 41.6845 75.9256C38.5372 72.1221 35.8023 66.9209 33.5027 61.396C28.9095 50.3605 26.1501 38.2752 25.2796 34.1427C25.2803 34.1419 25.2811 34.141 25.2821 34.1401C25.2989 34.1233 25.3266 34.1116 25.3602 34.1163C29.9254 34.7572 44.2181 35.6531 51.8945 23.2197C51.902 23.2075 51.9106 23.1994 51.9247 23.1921C51.9415 23.1833 51.9677 23.1755 52 23.1755C52.0323 23.1755 52.0585 23.1833 52.0753 23.1921C52.0894 23.1994 52.098 23.2075 52.1055 23.2197C59.7819 35.6531 74.0746 34.7572 78.6398 34.1163C78.6734 34.1116 78.7011 34.1233 78.7179 34.1401C78.7189 34.141 78.7197 34.1419 78.7204 34.1427C77.8499 38.2752 75.0905 50.3605 70.4973 61.396C68.1977 66.9209 65.4628 72.1221 62.3155 75.9256C59.1573 79.7424 55.7148 82 52 82Z" stroke="#1CFAC5" strokeWidth="2"/>
-    <path d="M41 54L48.7929 61.7929C49.1834 62.1834 49.8166 62.1834 50.2071 61.7929L67 45" stroke="#1CFAC5" strokeWidth="2"/>
+    <path className="animate-icon-breathe" d="M52 82C48.2852 82 44.8427 79.7424 41.6845 75.9256C38.5372 72.1221 35.8023 66.9209 33.5027 61.396C28.9095 50.3605 26.1501 38.2752 25.2796 34.1427C25.2803 34.1419 25.2811 34.141 25.2821 34.1401C25.2989 34.1233 25.3266 34.1116 25.3602 34.1163C29.9254 34.7572 44.2181 35.6531 51.8945 23.2197C51.902 23.2075 51.9106 23.1994 51.9247 23.1921C51.9415 23.1833 51.9677 23.1755 52 23.1755C52.0323 23.1755 52.0585 23.1833 52.0753 23.1921C52.0894 23.1994 52.098 23.2075 52.1055 23.2197C59.7819 35.6531 74.0746 34.7572 78.6398 34.1163C78.6734 34.1116 78.7011 34.1233 78.7179 34.1401C78.7189 34.141 78.7197 34.1419 78.7204 34.1427C77.8499 38.2752 75.0905 50.3605 70.4973 61.396C68.1977 66.9209 65.4628 72.1221 62.3155 75.9256C59.1573 79.7424 55.7148 82 52 82Z" stroke="#1CFAC5" strokeWidth="2"/>
+    <path className="animate-icon-pulse-delay" d="M41 54L48.7929 61.7929C49.1834 62.1834 49.8166 62.1834 50.2071 61.7929L67 45" stroke="#1CFAC5" strokeWidth="2"/>
   </svg>
 );
 
 export const Ingenuity = () => (
   <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="52" cy="52" r="52" fill="#072932"/>
-    <ellipse cx="52.2419" cy="51.8202" rx="32" ry="15.5" transform="rotate(33.4647 52.2419 51.8202)" stroke="#1CFAC5" strokeWidth="2"/>
-    <rect x="20" y="37" width="9" height="9" rx="4.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
-    <ellipse cx="52.2424" cy="51.8212" rx="32" ry="15.5" transform="rotate(138.465 52.2424 51.8212)" stroke="#1CFAC5" strokeWidth="2"/>
-    <rect x="63" y="53" width="9" height="9" rx="4.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+    <g className="animate-icon-orbit">
+      <ellipse cx="52.2419" cy="51.8202" rx="32" ry="15.5" transform="rotate(33.4647 52.2419 51.8202)" stroke="#1CFAC5" strokeWidth="2"/>
+      <rect x="20" y="37" width="9" height="9" rx="4.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+    </g>
+    <g className="animate-icon-orbit-reverse">
+      <ellipse cx="52.2424" cy="51.8212" rx="32" ry="15.5" transform="rotate(138.465 52.2424 51.8212)" stroke="#1CFAC5" strokeWidth="2"/>
+      <rect x="63" y="53" width="9" height="9" rx="4.5" fill="#072932" stroke="#1CFAC5" strokeWidth="2"/>
+    </g>
   </svg>
 );
 
