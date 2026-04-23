@@ -4,6 +4,7 @@ import { Button } from "../components/Button";
 import { TextInput } from "@/components/TextInput";
 import { TextArea } from "@/components/TextArea";
 import { Container } from "@/components/Container";
+import { FadeUp } from "@/components/FadeUp";
 
 interface ContactFormProps {
   heading: string;
@@ -51,10 +52,14 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
       <Container>
         <div className="grid gap-[2.375rem] lg:grid-cols-2 lg:gap-0">
           <div className="lg:max-w-[26.25rem]">
-            <h2 className="mb-[.5rem] text-[2.25rem] font-[300] text-brightGreen lg:text-[2.875rem]">
-              {heading}
-            </h2>
-            <p className="text-[1.25rem]">{text}</p>
+            <FadeUp>
+              <h2 className="mb-[.5rem] text-[2.25rem] font-[300] text-brightGreen lg:text-[2.875rem]">
+                {heading}
+              </h2>
+            </FadeUp>
+            <FadeUp delay={100}>
+              <p className="text-[1.25rem]">{text}</p>
+            </FadeUp>
           </div>
           <form onSubmit={handleSubmit}>
             <input
