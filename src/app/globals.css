@@ -47,3 +47,65 @@ h6 {
     text-wrap: balance;
   }
 }
+
+@keyframes icon-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes icon-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes icon-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes icon-slide {
+  0%, 100% { transform: translateX(-28px); }
+  50% { transform: translateX(28px); }
+}
+@keyframes icon-slide-reverse {
+  0%, 100% { transform: translateX(28px); }
+  50% { transform: translateX(-28px); }
+}
+
+.animate-icon-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: icon-spin 20s linear infinite;
+}
+.animate-icon-spin-reverse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: icon-spin-reverse 14s linear infinite;
+}
+.animate-icon-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: icon-pulse 3s ease-in-out infinite;
+}
+.animate-icon-pulse-delay {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: icon-pulse 3s ease-in-out 1.5s infinite;
+}
+.animate-icon-float {
+  animation: icon-float 4s ease-in-out infinite;
+}
+.animate-icon-float-d1 {
+  animation: icon-float 4s ease-in-out 0.4s infinite;
+}
+.animate-icon-float-d2 {
+  animation: icon-float 4s ease-in-out 0.8s infinite;
+}
+.animate-icon-slide {
+  animation: icon-slide 6s ease-in-out infinite;
+}
+.animate-icon-slide-reverse {
+  animation: icon-slide-reverse 7s ease-in-out 0.5s infinite;
+}
+.animate-icon-slide-slow {
+  animation: icon-slide 9s ease-in-out 1s infinite;
+}
