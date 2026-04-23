@@ -43,17 +43,17 @@ export default function Home() {
           {
             icon: <Clean />,
             title: 'Clean + Modern',
-            text: 'Lorem ipsum dolor sit amet consectetur. Sed auctor sed sapien tempus id. Lectus sodales sed commodo lorem tellus natoque. Tempor porta mauris sodales nulla arcu tempus fringilla. Ultrices vitae tempus egestas elit arcu.'
+            text: 'Every line of code is written to the highest standards — readable, maintainable, and built to scale. We treat your codebase like a long-term investment, not a short-term fix.'
           },
           {
             icon: <Devices />,
             title: 'Scalable + Dynamic',
-            text: 'Lorem ipsum dolor sit amet consectetur. Sed auctor sed sapien tempus id. Lectus sodales sed commodo lorem tellus natoque. Tempor porta mauris sodales nulla arcu tempus fringilla. Ultrices vitae tempus egestas elit arcu.'
+            text: 'We build for where you\'re going, not just where you are. Every solution is architected to integrate seamlessly into your codebase, making future growth and content changes effortless.'
           },
           {
             icon: <Refined />,
             title: 'Eloquent + Refined',
-            text: 'Lorem ipsum dolor sit amet consectetur. Sed auctor sed sapien tempus id. Lectus sodales sed commodo lorem tellus natoque. Tempor porta mauris sodales nulla arcu tempus fringilla. Ultrices vitae tempus egestas elit arcu.'
+            text: 'Good code is precise — no more, no less. We write exactly what\'s needed for the task at hand, resulting in lean, expressive solutions that are as easy to read as they are to maintain.'
           },
         ]}
       />
