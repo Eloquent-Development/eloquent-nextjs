@@ -41,7 +41,7 @@ export default function AltGateAIPage() {
             <h1 className="mb-6 font-mono text-5xl text-white md:text-7xl">
               AltGate AI
             </h1>
-            <p className="mb-10 text-xl leading-relaxed text-lightGreen">
+            <p className="mb-10 text-xl leading-relaxed text-white">
               AI-generated alt text for every image in your store. Improve
               accessibility, boost SEO, and save time — automatically.
             </p>
@@ -101,9 +101,7 @@ export default function AltGateAIPage() {
             <h2 className="mb-4 font-mono text-3xl text-white md:text-4xl">
               Ready to fix your alt text?
             </h2>
-            <p className="mb-10 text-lg text-lightGreen">
-              Free plan available. No credit card required.
-            </p>
+            <p className="mb-10 text-lg text-white">Free plan available.</p>
             <a
               href={APP_STORE_URL}
               className="inline-block rounded-full bg-brightGreen px-8 py-3 font-mono text-lg uppercase text-darkGreen transition-opacity hover:opacity-90"
