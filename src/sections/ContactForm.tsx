@@ -46,6 +46,7 @@ export const ContactForm = ({ heading, text }: ContactFormProps) => {
 
   return (
     <section
+      id="contact"
       className="bg-darkGreen py-8 text-white lg:py-36"
       data-contact-form
     >
