@@ -131,7 +131,7 @@ export function Pricing() {
                 {suffix && (
                   <span
                     className={`font-mono text-sm ${
-                      plan.highlighted ? "text-lightGreen" : "text-grey"
+                      plan.highlighted ? "text-white" : "text-grey"
                     }`}
                   >
                     {suffix}
@@ -142,7 +142,7 @@ export function Pricing() {
                 {perMonth ? (
                   <p
                     className={`font-mono text-xs ${
-                      plan.highlighted ? "text-lightGreen" : "text-grey"
+                      plan.highlighted ? "text-white" : "text-grey"
                     }`}
                   >
                     {perMonth} billed annually
@@ -160,7 +160,7 @@ export function Pricing() {
                   <li
                     key={feature}
                     className={`flex items-start gap-2 text-sm ${
-                      plan.highlighted ? "text-lightGreen" : "text-grey"
+                      plan.highlighted ? "text-white" : "text-grey"
                     }`}
                   >
                     <span className="mt-0.5 shrink-0 text-brightGreen">✓</span>
