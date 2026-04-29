@@ -13,7 +13,7 @@ const PLANS = [
     perMonth: null,
     trialDays: null,
     features: [
-      "15 images per month",
+      "25 images per month",
       "AI-generated alt text",
       "Files library support",
     ],
