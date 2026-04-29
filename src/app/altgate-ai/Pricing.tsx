@@ -15,7 +15,7 @@ const PLANS = [
     features: [
       "25 images per month",
       "AI-generated alt text",
-      "Files library support",
+      "Saves to Shopify Files library",
     ],
     highlighted: false,
   },
@@ -29,7 +29,7 @@ const PLANS = [
     features: [
       "250 images per month",
       "AI-generated alt text",
-      "Files library support",
+      "Saves to Shopify Files library",
       "Files library browser",
     ],
     highlighted: true,
@@ -44,7 +44,7 @@ const PLANS = [
     features: [
       "1,000 images per month",
       "AI-generated alt text",
-      "Files library support",
+      "Saves to Shopify Files library",
       "Files library browser",
       "AI-generated SEO filenames",
     ],
