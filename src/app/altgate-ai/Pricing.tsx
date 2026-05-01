@@ -49,6 +49,7 @@ const PLANS = [
       "Bulk upload",
       "Files library browser",
       "AI-generated SEO filenames",
+      "Brand-aware alt text",
     ],
     highlighted: false,
   },
