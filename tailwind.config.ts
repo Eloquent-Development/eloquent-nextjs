@@ -22,7 +22,18 @@ const config: Config = {
     fontFamily: {
       sans: ['var(--font-rethink-sans)', 'sans-serif'],
       mono: ['var(--font-ballinger-mono)', 'monospace']
-    }
+    },
+    extend: {
+      keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-50% - 1.5rem))' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 40s linear infinite',
+      },
+    },
   },
   plugins: [],
 };
