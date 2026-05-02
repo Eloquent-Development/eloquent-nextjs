@@ -18,34 +18,38 @@ export default function Home() {
   return (
     <main>
       <Hero
-        heading="Personalized Development Solutions"
-        text="Personalized Shopify development, making it easy to take your project from start to finish."
+        heading="Storefronts worth shipping"
+        text="Over a decade of Shopify expertise — themes, apps, Hydrogen — combined with AI fluency to keep your brand a step ahead."
         btnText="Get in Touch"
       />
       <IconsWithText
-        heading="Capabilities"
-        subheading="We tailor each project to help you show off your brand in a unique, modern and engaging way."
+        heading="The Eloquent Difference"
+        subheading="What distinguishes our work."
         icons={[
           {
             icon: <Experience />,
             title: "Experience",
-            text: "Over a decade of knowledge in Shopify and its app ecosystems to help find the right fit for you.",
+            text: "Over ten years deep in Shopify — themes, apps, Plus, and Hydrogen.",
           },
           {
             icon: <Integrity />,
             title: "Integrity",
-            text: "Working with you and beyond to ensure a dynamic site experience for your audience.",
+            text: "Architectural integrity, top to bottom. We build for the long haul.",
           },
           {
             icon: <Ingenuity />,
             title: "Ingenuity",
-            text: "Develop creative solutions to fit the needs of the uniqueness of each project.",
+            text: "Creative solutions that go the extra mile and beyond.",
           },
         ]}
         btnText="Get in Touch"
       />
       <ContentTiles
-        heading="Elevate Your Brand"
+        heading={
+          <>
+            Re<span className="opacity-40">(de)</span>fine Your Storefront
+          </>
+        }
         tiles={[
           {
             icon: <Clean />,
@@ -67,7 +71,7 @@ export default function Home() {
       <ClientList />
       <ContactForm
         heading="Get in Touch"
-        text="Tell us a bit about your business needs and goals to ensure we can tailor an engagement to reach your goals."
+        text="Tell us what you're building. We'll come back with a thoughtful read on how to get there."
       />
     </main>
   );

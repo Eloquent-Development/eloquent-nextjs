@@ -10,7 +10,7 @@ interface Tile {
 }
 
 interface ContentTilesProps {
-  heading: string,
+  heading: React.ReactNode,
   tiles: Tile[],
 }
 
