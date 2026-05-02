@@ -29,9 +29,14 @@ const config: Config = {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-50% - 1.5rem))' },
         },
+        'subtle-pulse': {
+          '0%, 100%': { opacity: '0.4' },
+          '50%': { opacity: '0.7' },
+        },
       },
       animation: {
         marquee: 'marquee 40s linear infinite',
+        'subtle-pulse': 'subtle-pulse 4s ease-in-out infinite',
       },
     },
   },

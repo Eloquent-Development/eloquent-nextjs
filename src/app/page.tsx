@@ -47,7 +47,7 @@ export default function Home() {
       <ContentTiles
         heading={
           <>
-            Re<span className="opacity-40">(de)</span>fine Your Storefront
+            Re<span className="animate-subtle-pulse opacity-40 motion-reduce:animate-none">(de)</span>fine Your Storefront
           </>
         }
         tiles={[
