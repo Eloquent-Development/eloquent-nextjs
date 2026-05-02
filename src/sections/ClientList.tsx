@@ -1,13 +1,20 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import Image from "next/image";
-import { Container } from '@/components/Container';
+import { Container } from "@/components/Container";
 
 export const ClientList = () => {
   return (
     <section className="py-11 lg:py-28">
       <Container>
-        <div className="flex flex-wrap justify-around items-center gap-7 lg:gap-14 max-w-7xl mx-auto">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-7 lg:gap-14">
+          <Image
+            className="h-[26px] w-auto lg:h-[40px]"
+            alt="Gopure Beauty Logo"
+            width={148}
+            height={24}
+            src="/gopure.svg"
+          />
           <Image
             className="h-[40px] lg:h-[65px]"
             alt="Stanley Logo"
