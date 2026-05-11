@@ -8,7 +8,6 @@ export const metadata: Metadata = {
     "AltGate AI generates accessibility-ready, SEO-optimized alt text for your Shopify store images. Powered by Gemini AI.",
 };
 
-// Update once the app is live on the App Store
 const APP_STORE_URL = "https://apps.shopify.com/altgate-ai";
 
 const HOW_IT_WORKS = [
