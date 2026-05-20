@@ -161,7 +161,8 @@ export function Pricing() {
                     plan.highlighted ? "text-white" : "text-grey"
                   }`}
                 >
-                  <span className="mt-0.5 w-3 shrink-0" />
+                  {/* Empty fixed-width column so the label aligns with the rows below */}
+                  <span className="mt-0.5 inline-block w-4 shrink-0" />
                   {plan.quota}
                 </li>
                 {FEATURES.map((f) => {
@@ -173,19 +174,19 @@ export function Pricing() {
                         plan.highlighted ? "text-white" : "text-grey"
                       }`}
                     >
-                      {included ? (
-                        <span className="mt-0.5 shrink-0 text-brightGreen">
-                          ✓
-                        </span>
-                      ) : (
-                        <span
-                          className={`mt-0.5 shrink-0 ${
-                            plan.highlighted ? "text-red-400" : "text-red-500"
-                          }`}
-                        >
-                          ✗
-                        </span>
-                      )}
+                      {/* Fixed-width centered box so the glyph (which has variable */}
+                      {/* natural width across check/cross) doesn't shift the label start. */}
+                      <span
+                        className={`mt-0.5 inline-block w-4 shrink-0 text-center ${
+                          included
+                            ? "text-brightGreen"
+                            : plan.highlighted
+                              ? "text-red-400"
+                              : "text-red-500"
+                        }`}
+                      >
+                        {included ? "✓" : "✗"}
+                      </span>
                       {f.label}
                     </li>
                   );
