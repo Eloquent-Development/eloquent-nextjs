@@ -3,56 +3,51 @@
 import { useState } from "react";
 
 type Interval = "monthly" | "annual";
+type PlanKey = "free" | "standard" | "pro";
+
+// Unified feature matrix so every plan card renders the same rows — included
+// features get a green check, unavailable ones a red cross. Keep in sync with
+// the in-app billing page (alt-gate repo: app/routes/app.billing.tsx).
+const FEATURES: Array<{ label: string } & Record<PlanKey, boolean>> = [
+  { label: "AI-generated alt text", free: true, standard: true, pro: true },
+  { label: "Saves to Shopify Files library", free: true, standard: true, pro: true },
+  { label: "Bulk upload", free: false, standard: true, pro: true },
+  { label: "Files library with per-page batch generation", free: false, standard: true, pro: true },
+  { label: "Per-image context hints", free: false, standard: true, pro: true },
+  { label: "AI-generated SEO filenames", free: false, standard: false, pro: true },
+  { label: "Brand-aware alt text", free: false, standard: false, pro: true },
+  { label: "Product catalogue browser", free: false, standard: false, pro: true },
+];
 
 const PLANS = [
   {
-    key: "free",
+    key: "free" as const,
     name: "Free",
     monthlyPrice: "$0",
     annualPrice: null,
     perMonth: null,
     trialDays: null,
-    features: [
-      "25 images per month",
-      "AI-generated alt text",
-      "Saves to Shopify Files library",
-    ],
+    quota: "25 images per month",
     highlighted: false,
   },
   {
-    key: "standard",
+    key: "standard" as const,
     name: "Standard",
     monthlyPrice: "$9.99",
     annualPrice: "$99",
     perMonth: "$8.25",
     trialDays: 7,
-    features: [
-      "250 images per month",
-      "AI-generated alt text",
-      "Saves to Shopify Files library",
-      "Bulk upload",
-      "Files library browser",
-      "Per-image context hints",
-    ],
+    quota: "250 images per month",
     highlighted: true,
   },
   {
-    key: "pro",
+    key: "pro" as const,
     name: "Pro",
     monthlyPrice: "$24.99",
     annualPrice: "$249",
     perMonth: "$20.75",
     trialDays: 7,
-    features: [
-      "1,000 images per month",
-      "AI-generated alt text",
-      "Saves to Shopify Files library",
-      "Bulk upload",
-      "Files library browser",
-      "Per-image context hints",
-      "AI-generated SEO filenames",
-      "Brand-aware alt text",
-    ],
+    quota: "1,000 images per month",
     highlighted: false,
   },
 ];
@@ -161,17 +156,40 @@ export function Pricing() {
               )}
               {!plan.trialDays && <div className="mb-6 h-4" />}
               <ul className="space-y-3">
-                {plan.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className={`flex items-start gap-2 text-sm ${
-                      plan.highlighted ? "text-white" : "text-grey"
-                    }`}
-                  >
-                    <span className="mt-0.5 shrink-0 text-brightGreen">✓</span>
-                    {feature}
-                  </li>
-                ))}
+                <li
+                  className={`flex items-start gap-2 text-sm ${
+                    plan.highlighted ? "text-white" : "text-grey"
+                  }`}
+                >
+                  <span className="mt-0.5 w-3 shrink-0" />
+                  {plan.quota}
+                </li>
+                {FEATURES.map((f) => {
+                  const included = f[plan.key];
+                  return (
+                    <li
+                      key={f.label}
+                      className={`flex items-start gap-2 text-sm ${
+                        plan.highlighted ? "text-white" : "text-grey"
+                      }`}
+                    >
+                      {included ? (
+                        <span className="mt-0.5 shrink-0 text-brightGreen">
+                          ✓
+                        </span>
+                      ) : (
+                        <span
+                          className={`mt-0.5 shrink-0 ${
+                            plan.highlighted ? "text-red-400" : "text-red-500"
+                          }`}
+                        >
+                          ✗
+                        </span>
+                      )}
+                      {f.label}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           );
