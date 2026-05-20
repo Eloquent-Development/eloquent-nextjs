@@ -155,29 +155,29 @@ export function Pricing() {
                 </p>
               )}
               {!plan.trialDays && <div className="mb-6 h-4" />}
+              {/* CSS grid keeps the icon column at a fixed 1rem regardless of */}
+              {/* its glyph (or empty for the quota row), so every label in */}
+              {/* column 2 starts at exactly the same x-position. */}
               <ul className="space-y-3">
                 <li
-                  className={`flex items-start gap-2 text-sm ${
+                  className={`grid grid-cols-[1rem_1fr] items-start gap-2 text-sm ${
                     plan.highlighted ? "text-white" : "text-grey"
                   }`}
                 >
-                  {/* Empty fixed-width column so the label aligns with the rows below */}
-                  <span className="mt-0.5 inline-block w-4 shrink-0" />
-                  {plan.quota}
+                  <span />
+                  <span>{plan.quota}</span>
                 </li>
                 {FEATURES.map((f) => {
                   const included = f[plan.key];
                   return (
                     <li
                       key={f.label}
-                      className={`flex items-start gap-2 text-sm ${
+                      className={`grid grid-cols-[1rem_1fr] items-start gap-2 text-sm ${
                         plan.highlighted ? "text-white" : "text-grey"
                       }`}
                     >
-                      {/* Fixed-width centered box so the glyph (which has variable */}
-                      {/* natural width across check/cross) doesn't shift the label start. */}
                       <span
-                        className={`mt-0.5 inline-block w-4 shrink-0 text-center ${
+                        className={`mt-0.5 text-center ${
                           included
                             ? "text-brightGreen"
                             : plan.highlighted
@@ -187,7 +187,7 @@ export function Pricing() {
                       >
                         {included ? "✓" : "✗"}
                       </span>
-                      {f.label}
+                      <span>{f.label}</span>
                     </li>
                   );
                 })}
